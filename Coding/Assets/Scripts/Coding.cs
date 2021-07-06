@@ -20,6 +20,9 @@ public class Coding : MonoBehaviour
         print("Sum : " + result5);
         int result6 = Sum(3,15);
         print("Sum : " + result6);
+        int result7 = OddSum(11);
+        print("OddSum : " + result7);
+        TimeTableAll();
     }
 
     // Update is called once per frame
@@ -86,4 +89,32 @@ public class Coding : MonoBehaviour
         }
         return nsum;
     }
+
+    int OddSum(int c)
+    {
+        int nsum = 0;
+        for (int i = 0; i <= c; i++)
+        {
+            if (i % 2 == 0) continue;
+            nsum += i;
+        }
+        return nsum;
+    }
+
+    void TimeTableAll()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            TimeTable(i);
+        }
+    }
+    void TimeTable(int x)
+    {
+        for(int i =1; i < 10; i++)
+        {
+            print(x+"x" + i + "=" + x * i);
+        }
+        print("\n");
+    }
+
 }
