@@ -8,7 +8,7 @@ public class PlayerFire : MonoBehaviour
 
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -20,4 +20,6 @@ public class PlayerFire : MonoBehaviour
             bullet.transform.position = transform.position;
         }
     }
+
+    
 }
