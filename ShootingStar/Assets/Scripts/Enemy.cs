@@ -44,7 +44,24 @@ public class Enemy : MonoBehaviour
 
         GameObject boom = Instantiate(explosionprefab);
         boom.transform.position = transform.position;
-        Destroy(collision.gameObject); //자기자신의 오브젝트 제거
-        Destroy(gameObject);
+
+        if (collision.gameObject.name.Contains("Player") == true)//player를 포함하고 있으면
+        {
+            Player p = collision.gameObject.GetComponent<Player>();
+            p.hp--;
+            p.CalcPlayerHp();
+            if (p.hp<0)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        else
+        {
+            Destroy(collision.gameObject); //총알과 플레이어제거
+        }
+        Destroy(gameObject);//자기자신의 오브젝트 제거
+        GameObject sm = GameObject.Find("ScoreManager");
+        ScoreManager s = sm.GetComponent<ScoreManager>();
+        s.CalcScore(10);
     }
 }

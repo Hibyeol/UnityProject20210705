@@ -15,6 +15,6 @@ public class BG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mr.material.mainTextureOffset += Vector2.up * speed * Time.deltaTime;
+        //mr.material.mainTextureOffset += Vector2.up * speed * Time.deltaTime;
     }
 }
